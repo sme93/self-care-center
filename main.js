@@ -41,7 +41,7 @@ var mantras = [
 ];
 
 receiveButton.addEventListener("click", showMessage);
-addButton.addEventListener("click", showForm);
+addButton.addEventListener("click", toggleForm);
 submitMessageButton.addEventListener("click", submitMessage);
 
 function getRandomIndex(array) {
@@ -81,7 +81,7 @@ function showMessage(event) {
   }
 }
 
-function showForm() {
+function toggleForm() {
   addButton.classList.toggle("hidden");
   addMessageForm.classList.toggle("hidden");
 }
@@ -91,14 +91,23 @@ function submitMessage(event) {
 
   for (var radioButton of addMessageRadioButtons) {
     if (radioButton.checked) {
-      writeMessageToPage(messageInput.value);
-      showForm();
-
       if (radioButton.value === "affirmation") {
-        // writeMessageToPage(messageInput.value);
+        addMessageToArray(messageInput.value, true);
       } else {
-        // writeMessageToPage(messageInput.value);
+        addMessageToArray(messageInput.value);
       }
+
+      writeMessageToPage(messageInput.value);
+      toggleForm();
+      messageInput.value = null;
     }
+  }
+}
+
+function addMessageToArray(customMessage, isAffirmation) {
+  if (isAffirmation) {
+    affirmations.push(customMessage);
+  } else {
+    mantras.push(customMessage);
   }
 }
