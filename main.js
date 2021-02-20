@@ -1,8 +1,7 @@
-//query selector variables
+var radioButtons = document.querySelectorAll(".message-input");
+var receiveButton = document.querySelector(".message-button");
+var messageDisplay = document.querySelector(".message-display");
 
-
-
-//arrays of messages
 var affirmations = [
 "I forgive myself and set myself free.",
 "I believe I can be all that I want to be.",
@@ -36,10 +35,39 @@ var mantras = [
 "I am the sky, the rest is weather."
 ];
 
+receiveButton.addEventListener("click", showMessage);
 
-//event listeners
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
 
+function displayRandomAffirmation() {
+  var randomAffirmationIndex = getRandomIndex(affirmations);
+  var randomAffirmation = affirmations[randomAffirmationIndex];
+  writeMessageToPage(randomAffirmation);
+}
+function displayRandomMantra() {
+  var randomMantraIndex = getRandomIndex(mantras);
+  var randomMantra = mantras[randomMantraIndex];
+  writeMessageToPage(randomMantra);
+}
 
+function writeMessageToPage(message) {
+  var markup = `
+    <p>${message}</p>
+  `;
+  messageDisplay.innerHTML = markup;
+}
 
-
-//functions/event handlers
+function showMessage() {
+  event.preventDefault();
+  for (var radioButton of radioButtons) {
+    if (radioButton.checked) {
+      if (radioButton.value === "affirmation") {
+        displayRandomAffirmation();
+      } else {
+        displayRandomMantra();
+      }
+    }
+  }
+}
