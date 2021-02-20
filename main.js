@@ -1,8 +1,11 @@
-var radioButtons = document.querySelectorAll(".message-input");
+var radioButtons = document.querySelectorAll(".message-radio-input");
 var receiveButton = document.querySelector(".receive-message-button");
 var messageDisplay = document.querySelector(".message-display");
 var addButton = document.querySelector(".add-message-button");
 var addMessageForm = document.querySelector(".add-message-form");
+var submitMessageButton = document.querySelector(".submit-message-button");
+var addMessageRadioButtons = document.querySelectorAll(".add-message-radio-input");
+var messageInput = document.querySelector(".message-input");
 
 var affirmations = [
 "I forgive myself and set myself free.",
@@ -39,6 +42,7 @@ var mantras = [
 
 receiveButton.addEventListener("click", showMessage);
 addButton.addEventListener("click", showForm);
+submitMessageButton.addEventListener("click", submitMessage);
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -49,6 +53,7 @@ function displayRandomAffirmation() {
   var randomAffirmation = affirmations[randomAffirmationIndex];
   writeMessageToPage(randomAffirmation);
 }
+
 function displayRandomMantra() {
   var randomMantraIndex = getRandomIndex(mantras);
   var randomMantra = mantras[randomMantraIndex];
@@ -62,8 +67,9 @@ function writeMessageToPage(message) {
   messageDisplay.innerHTML = markup;
 }
 
-function showMessage() {
+function showMessage(event) {
   event.preventDefault();
+
   for (var radioButton of radioButtons) {
     if (radioButton.checked) {
       if (radioButton.value === "affirmation") {
@@ -78,4 +84,21 @@ function showMessage() {
 function showForm() {
   addButton.classList.toggle("hidden");
   addMessageForm.classList.toggle("hidden");
+}
+
+function submitMessage(event) {
+  event.preventDefault();
+
+  for (var radioButton of addMessageRadioButtons) {
+    if (radioButton.checked) {
+      writeMessageToPage(messageInput.value);
+      showForm();
+
+      if (radioButton.value === "affirmation") {
+        // writeMessageToPage(messageInput.value);
+      } else {
+        // writeMessageToPage(messageInput.value);
+      }
+    }
+  }
 }
