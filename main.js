@@ -1,6 +1,8 @@
 var radioButtons = document.querySelectorAll(".message-input");
 var receiveButton = document.querySelector(".receive-message-button");
 var messageDisplay = document.querySelector(".message-display");
+var addButton = document.querySelector(".add-message-button");
+var addMessageForm = document.querySelector(".add-message-form");
 
 var affirmations = [
 "I forgive myself and set myself free.",
@@ -36,6 +38,7 @@ var mantras = [
 ];
 
 receiveButton.addEventListener("click", showMessage);
+addButton.addEventListener("click", showForm);
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -70,4 +73,9 @@ function showMessage() {
       }
     }
   }
+}
+
+function showForm() {
+  addButton.classList.toggle("hidden");
+  addMessageForm.classList.toggle("hidden");
 }

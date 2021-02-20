@@ -67,7 +67,9 @@ h3 {
   justify-content: space-around;
 }
 
-
+.hidden {
+  display: none!important;
+}
 
 /* font-family: 'Quicksand', sans-serif;
 COLORS
