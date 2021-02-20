@@ -11,21 +11,39 @@
         <h3>Which type of message?</h3>
         <form class="message-form" action="index.html" method="post">
           <div class="radio-buttons">
-              <div class="affirmation-button">
-                <input class="message-input" type="radio" name="message" value="affirmation" />
-                <label for="affirmation">affirmation</label>
-              </div>
-              <div class="mantra-button">
-                <input class="message-input" type="radio" name="message" value="mantra"/>
-                <label for="mantra">mantra</label>
-              </div>
+            <div class="affirmation-button">
+              <input class="message-radio-input" type="radio" name="message" value="affirmation" />
+              <label for="affirmation">affirmation</label>
             </div>
-          <div class="receive-button">
-            <button class="message-button">Receive Message</button>
+            <div class="mantra-button">
+              <input class="message-radio-input" type="radio" name="message" value="mantra"/>
+              <label for="mantra">mantra</label>
+            </div>
           </div>
+          <input class="button receive-message-button" type="submit" value="Receive Message">
         </form>
         <div class="message-display">
           <img src="./assets/meditate.svg" alt="meditating person">
+        </div>
+        <div class="message-form">
+          <form class="add-message-form hidden" action="index.html" method="post">
+            <div class="radio-buttons">
+              <div class="affirmation-button">
+                <input class="add-message-radio-input" type="radio" name="message" value="affirmation" />
+                <label for="affirmation">affirmation</label>
+              </div>
+              <div class="mantra-button">
+                <input class="add-message-radio-input" type="radio" name="message" value="mantra"/>
+                <label for="mantra">mantra</label>
+              </div>
+            </div>
+            <div class="text-input">
+              <label class="visually-hidden" for="add-message-input">Your message here</label>
+              <input class="message-input" type="text" id="add-message-input" name="add-message-input" placeholder="Your message here"/>
+              <input class="button submit-message-button" type="submit" value="Submit">
+            </div>
+          </form>
+          <button class="button add-message-button">Add your own message</button>
         </div>
       </section>
     </main>
