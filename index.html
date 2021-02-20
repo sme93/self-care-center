@@ -12,21 +12,36 @@
         <form class="message-form" action="index.html" method="post">
           <div class="radio-buttons">
               <div class="affirmation-button">
-                <input class="message-input" type="radio" name="message" value="affirmation" />
+                <input class="message-input" type="radio" name="message" value="yes" />
                 <label for="affirmation">affirmation</label>
               </div>
               <div class="mantra-button">
-                <input class="message-input" type="radio" name="message" value="mantra"/>
+                <input class="message-input" type="radio" name="message" value="no"/>
                 <label for="mantra">mantra</label>
               </div>
             </div>
-          <div class="receive-button">
-            <button class="message-button">Receive Message</button>
+          <div>
+            <button class="button receive-message-button">Receive Message</button>
           </div>
         </form>
         <div class="message-display">
           <img src="./assets/meditate.svg" alt="meditating person">
         </div>
+        <form class="message-form" action="index.html" method="post">
+          <!-- <div class="radio-buttons">
+              <div class="affirmation-button">
+                <input class="message-input" type="radio" name="message" value="yes" />
+                <label for="affirmation">affirmation</label>
+              </div>
+              <div class="mantra-button">
+                <input class="message-input" type="radio" name="message" value="no"/>
+                <label for="mantra">mantra</label>
+              </div>
+            </div> -->
+          <div>
+            <button class="button add-message-button">Add your own message</button>
+          </div>
+        </form>
       </section>
     </main>
     <script type="text/javascript" src="main.js"></script>

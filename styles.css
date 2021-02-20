@@ -36,7 +36,7 @@ h3 {
   border-radius: 7.5px;
 }
 
-.message-button {
+.button {
   color: #ffffff;
   background-color: #134d71;
   border-radius: 4px;
@@ -52,7 +52,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items:center;
-  margin: 0 auto;
+  margin: 0 auto 75px;
   border-radius: 10px;
 }
 

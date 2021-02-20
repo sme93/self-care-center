@@ -1,5 +1,5 @@
 var radioButtons = document.querySelectorAll(".message-input");
-var receiveButton = document.querySelector(".message-button");
+var receiveButton = document.querySelector(".receive-message-button");
 var messageDisplay = document.querySelector(".message-display");
 
 var affirmations = [
