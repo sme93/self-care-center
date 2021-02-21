@@ -43,6 +43,7 @@ var mantras = [
 receiveButton.addEventListener("click", showMessage);
 addButton.addEventListener("click", toggleForm);
 submitMessageButton.addEventListener("click", submitMessage);
+addMessageForm.addEventListener("submit", preventFormSubmission);
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -58,6 +59,14 @@ function displayRandomMantra() {
   var randomMantraIndex = getRandomIndex(mantras);
   var randomMantra = mantras[randomMantraIndex];
   writeMessageToPage(randomMantra);
+}
+
+function addMessageToArray(customMessage, isAffirmation) {
+  if (isAffirmation) {
+    affirmations.push(customMessage);
+  } else {
+    mantras.push(customMessage);
+  }
 }
 
 function writeMessageToPage(message) {
@@ -87,8 +96,6 @@ function toggleForm() {
 }
 
 function submitMessage(event) {
-  event.preventDefault();
-
   for (var radioButton of addMessageRadioButtons) {
     if (radioButton.checked) {
       if (radioButton.value === "affirmation") {
@@ -104,10 +111,6 @@ function submitMessage(event) {
   }
 }
 
-function addMessageToArray(customMessage, isAffirmation) {
-  if (isAffirmation) {
-    affirmations.push(customMessage);
-  } else {
-    mantras.push(customMessage);
-  }
+function preventFormSubmission(event) {
+  event.preventDefault();
 }
