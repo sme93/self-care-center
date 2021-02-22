@@ -1,24 +1,34 @@
 # Self Care Center
-## Overview
+
+
+### Table of Contents
+- Introduction
+- Step-By-Step
+- Deployment
+- Author
+
+
+### Introduction
 How can I care for myself? One way is with affirmations and mantras!
 Affirmations are thoughts of positive self-empowerment, meant to assert your self-worth.
-Mantras are repetive phrases that are repeated again and again during mindfulness practices. Your challenge is to build an app that helps users remind themselves of their inherent value!
+Mantras are repetitive phrases that are repeated again and again during mindfulness practices. This app help users remind themselves of their inherent value!
 
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
+The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html).
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html). 
+Self-Care Center was written using HTML, CSS and Javascript. The HTML and CSS are written to match a provided comp.
 
-## Learning Goals
+### Step-By-Step
+The user is presented with the question "Which type of message?"
+and is asked to choose between an affirmation and a mantra. Once one is selected they can click the "Receive Message" button. A randomly selected affirmation or mantra will replace the image of the meditating man in the center display area.
 
-- Gain experience building an application that utilizes HTML, CSS and JavaScript
-- Write HTML and CSS to match a provided comp
-- Understand how to listen to and respond to user events
-- Individualize your programming skill set
+If the user is interested in adding their own affirmation or mantra to be inspired by, they can click the "Add your own Message" button below the message display area. Once selected, a form will appear with the choice between affirmation and mantra again, as well as an area for the user to input their personal message. If the user clicks the "submit" button before they choose affirmation or mantra, an error message will appear. Once affirmation or mantra is chosen and the phrase submitted, the phrase will appear in the message display area and the "Add your own message" button will appear again. If the user continues onto the top form and asks for more random affirmations or mantras, their personal addition will pop up eventually.
 
-## Setup
+### Deployment
 
-- Fork this project to your own Github account
-- Clone the repository to your local machine
-- `cd` into the project
-- Read this README thoroughly, then begin working!
+https://sme93.github.io/self-care-center/
 
+![screen capture of site](https://media.giphy.com/media/zdRZ8rQsJEyjmPJ43B/giphy.gif)
+
+### Author
+
+Sarah Fitzsimons - https://github.com/sme93
